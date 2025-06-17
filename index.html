@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clima por Região do Brasil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      background-color: #ffffff;
+      color: #0077ff;
+      cursor: pointer;
+    }
+
+    #resultado {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 80px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌤️ Clima no Brasil</h1>
+    <label for="regiao">Selecione uma região:</label><br>
+    <select id="regiao" onchange="atualizarCidades()">
+      <option value="">-- Escolha uma Região --</option>
+      <option value="norte">Norte</option>
+      <option value="nordeste">Nordeste</option>
+      <option value="centro-oeste">Centro-Oeste</option>
+      <option value="sudeste">Sudeste</option>
+      <option value="sul">Sul</option>
+    </select><br>
+
+    <select id="cidade">
+      <option value="">-- Escolha uma Cidade --</option>
+    </select><br>
+
+    <button onclick="consultarClima()">Consultar</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
